@@ -1,0 +1,10 @@
+<div  [style.background]="rgbColor"   [ngStyle]="{'box-shadow': '0px 0px 10px 5px ' + rgbColor}" class="flex w-full justify-start  rounded-md overflow-hidden progress-bar
+ " >
+
+    <!-- <div  [style.width]="progerssBarWidth" class="h-4 bg-white" >
+
+    </div> -->
+    <input type="range" class="w-full" min="0" [(ngModel)]="progerssBarWidth"  (input)="onSeek($event)" > 
+    
+    
+</div>

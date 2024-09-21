@@ -1,0 +1,33 @@
+<div class="controller-card flex-col">
+ 
+    <audio #audioPlayer (timeupdate)="onTimeUpdate()" (loadedmetadata)="onMetadata($event)"  >
+        <source #musicSource  >
+      </audio>
+      <app-music-time
+      class="w-full px-5"
+      [currentTime]="currentTime"
+      [duration] = 'duration'
+      >
+
+
+      </app-music-time>
+      <app-progress-bar
+      class="w-full px-5"
+      [currentTimeLenth]="currentTimeLenth"
+      [durationLenth] = 'durationLenth'
+      (seekCurrenTimeEvent)="seekCurrenTime($event)" 
+   
+      >
+
+      </app-progress-bar>
+      <app-music-controller-button 
+      [isMusicPlay]="isMusicPlay"
+      class="w-100"
+      (playEvent)="playMusic()" 
+      (nextEvent)="nextMusic()" 
+      (previousEvent)="previousMusic()"
+      (pauseEvent)="pauseMusic()"
+
+      ></app-music-controller-button>
+
+</div>

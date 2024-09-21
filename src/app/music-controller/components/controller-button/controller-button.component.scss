@@ -1,0 +1,19 @@
+.controller-card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100px;
+    justify-content: space-evenly;
+    position:sticky;
+
+        top: calc( 100vh - 100px );
+  
+
+ 
+
+    &__conttroller-icon{
+        transform: scale(2);
+        color: #FCFCFC;
+    }
+}

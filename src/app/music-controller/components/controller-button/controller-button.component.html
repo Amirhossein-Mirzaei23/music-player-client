@@ -1,0 +1,19 @@
+<div class="controller-card">
+    
+
+    <button  (click)="nextMusic()"  >
+    <mat-icon class="controller-card__conttroller-icon"  aria-hidden="false" aria-label="Example home icon" fontIcon="skip_next"></mat-icon>
+</button>
+
+ <button  (click)="playMusic()"  *ngIf="!isMusicPlay"   >
+    <mat-icon  class="controller-card__conttroller-icon"   aria-hidden="false" aria-label="Example home icon" fontIcon="play_arrow"></mat-icon>
+</button >
+
+<button  (click)="pauseMusic()"   *ngIf="isMusicPlay"  >
+    <mat-icon class="controller-card__conttroller-icon"  aria-hidden="false" aria-label="Example home icon" fontIcon="pause"></mat-icon>
+</button>
+
+    <button (click)="previousMusic()" >
+    <mat-icon class="controller-card__conttroller-icon"  aria-hidden="false" aria-label="Example home icon" fontIcon="skip_previous"></mat-icon>
+</button>
+</div>

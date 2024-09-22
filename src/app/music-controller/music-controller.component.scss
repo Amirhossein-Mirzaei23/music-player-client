@@ -6,11 +6,10 @@
  
     justify-content: space-evenly;
     position:sticky;
-
-        top: calc( 100vh - 100px );
+    top: calc( 100vh - 100px );
     bottom:0px;
     background-color: #091227;
-    border-top: solid 1px ;
+    
 
     &__conttroller-icon{
         transform: scale(2);

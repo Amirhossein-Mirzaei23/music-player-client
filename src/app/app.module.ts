@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 // import { AngularIconComponent } from './app/angular-icon/angular-icon.component';
 // Import your app's components
@@ -33,6 +34,7 @@ import { importProvidersFrom } from '@angular/core';
   ],
   imports: [
     // Import Angular and third-party modules
+    AppRoutingModule,
     BrowserModule,              // Necessary for web applications
     BrowserAnimationsModule,     // Enables animations in the app (required by Angular Material)
     FormsModule,                 // Template-driven forms

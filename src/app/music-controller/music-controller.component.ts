@@ -3,9 +3,10 @@ import { ControllerButtonComponent } from './components/controller-button/contro
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { ControllerPreviewComponent } from './components/controller-preview/controller-preview.component';
 import { MusicTimeComponent } from './components/music-time/music-time.component';
-import { Component, ViewChild, ElementRef, viewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef, viewChild, Output,EventEmitter } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { title } from 'process';
 
 @Component({
   selector: 'app-music-controller',
@@ -21,10 +22,26 @@ export class MusicControllerComponent {
 @ViewChild('musicSource') musicSourceRef!: ElementRef<HTMLSourceElement>;  // Correct type for <source> element
 
 musicSourceArray = [
-  'https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3',
-  'https://dl2.hitseda.com/Music/ak/funk/Viliam%20Lane%20-%20Particles%20%28Slowed%29.mp3',
-  'https://dl2.hitseda.com/dl1/bm/bikalam/light/CD02.Chris.Spheeris.The.Best.Of.Chris.Spheeris.1990.2000_p30download.com/01.%20The%20Arrow.mp3'
+  {
+    title:'song1',
+    artist:'theory of dead man',
+    coverImage:'../../../img/song1.jpg',
+    musicSrc:'https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3',
+  },
+  {
+    title:'song2',
+    artist:'theory of dead man',
+    coverImage:'../../../img/song1.jpg',
+    musicSrc:'https://dl2.hitseda.com/Music/ak/funk/Viliam%20Lane%20-%20Particles%20%28Slowed%29.mp3',
+  },
+  {
+    title:'song3',
+    artist:'theory of dead man',
+    coverImage:'../../../img/song1.jpg',
+    musicSrc:'https://dl2.hitseda.com/dl1/bm/bikalam/light/CD02.Chris.Spheeris.The.Best.Of.Chris.Spheeris.1990.2000_p30download.com/01.%20The%20Arrow.mp3',
+  },
 ]
+@Output() sendMusicDetailEvent = new EventEmitter<Object>();  // Event to handle Play
 
 musicSourceArrayIndex = 0
   currentTime:  string = '00:00';
@@ -32,10 +49,30 @@ musicSourceArrayIndex = 0
   currentTimeLenth:  number = 0;
   durationLenth: number = 1;
   volume: number = 1; // Initial volume level (100%)
+
+  sendMusicInforamtion(){
+console.log('send');
+
+  this.sendMusicDetailEvent.emit(this.musicSourceArray[this.musicSourceArrayIndex])
+
+  }
+  ngOnInit(): void {
+    // Called once the component is initialized
+    this.sendMusicInforamtion()
+    console.log('Component Initialized');
+  }
+
   nextMusic(): void {
     const audio = this.audioPlayerRef.nativeElement;
     console.log('next music');
-    this.musicSourceArrayIndex++
+    if (this.musicSourceArrayIndex >= this.musicSourceArray.length-1 ) {
+      console.log(this.musicSourceArrayIndex,this.musicSourceArray.length );
+      
+      this.musicSourceArrayIndex = 0
+    }else{
+      this.musicSourceArrayIndex++
+    }
+
     console.log(this.musicSourceArrayIndex);
     audio.load();
     this.playMusic()
@@ -44,7 +81,12 @@ musicSourceArrayIndex = 0
   previousMusic(): void {
     const audio = this.audioPlayerRef.nativeElement;
     console.log('previous music');
-    this.musicSourceArrayIndex--
+    if (this.musicSourceArrayIndex <= 0 ) {
+      this.musicSourceArrayIndex = this.musicSourceArray.length-1
+    }else{
+      this.musicSourceArrayIndex--
+    }
+
     console.log(this.musicSourceArrayIndex);
     audio.load();
     this.playMusic()
@@ -53,7 +95,9 @@ musicSourceArrayIndex = 0
   playMusic(): void {
     const audio = this.audioPlayerRef.nativeElement;
     const musicSource = this.musicSourceRef.nativeElement
-    musicSource.src = this.musicSourceArray[this.musicSourceArrayIndex]
+    musicSource.src = this.musicSourceArray[this.musicSourceArrayIndex].musicSrc
+    this.sendMusicInforamtion()
+    console.log('Component play');
    if (this.currentTimeLenth == 0) {
     audio.load();
    }

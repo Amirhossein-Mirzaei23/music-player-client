@@ -1,7 +1,8 @@
 <div class="w-full  h-screen " >
     <app-header></app-header>
     <div class="" *ngIf="musicData" >
-        <img class="rounded-xl overflow-hidden bg-teal-200 mx-auto w-11/12 mt-20" [src]="musicData.coverImage" alt="اهنگ">
+        <image-container [imageSrc]="musicData.coverImage" ></image-container>
+        <!-- <img class="rounded-xl overflow-hidden bg-teal-200 mx-auto w-11/12 mt-20" [src]="" alt="اهنگ"> -->
         <div class="flex flex-col items-center leading-5 mt-20" >
             <span class="font-medium text-2xl" >{{musicData.title}}</span>
             <span class="font-extralight text-opacity-70 text-lg" >{{musicData.artist}}</span>

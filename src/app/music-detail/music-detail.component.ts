@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { MusicControllerComponent } from '../music-controller/music-controller.component';
 import { HeaderComponent } from '../header/header.component';
-
+import { ImageContainerComponent } from '../image-container/image-container.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-music-detail',
   standalone: true,
-  imports: [MusicControllerComponent,HeaderComponent,MatIconModule,CommonModule],
+  imports: [MusicControllerComponent,HeaderComponent,MatIconModule,CommonModule,ImageContainerComponent],
   templateUrl: './music-detail.component.html',
   styleUrl: './music-detail.component.scss'
 })

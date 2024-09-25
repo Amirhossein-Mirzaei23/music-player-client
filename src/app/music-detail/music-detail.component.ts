@@ -24,7 +24,7 @@ export class MusicDetailComponent {
   musicData = {
       title: "song test",
       artist: "theory of dead man test",
-      coverImage: "../../../img/song1.jpg",
+      coverImage: "@/../img/song1.jpg",
       musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
   }
   

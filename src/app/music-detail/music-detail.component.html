@@ -1,40 +1,57 @@
-<div class="w-full  h-screen " >
-    <app-header></app-header>
-    <div class="" *ngIf="musicData" >
-        <image-container [imageSrc]="musicData.coverImage" ></image-container>
-        <!-- <img class="rounded-xl overflow-hidden bg-teal-200 mx-auto w-11/12 mt-20" [src]="" alt="اهنگ"> -->
-        <div class="flex flex-col items-center leading-5 mt-20" >
-            <span class="font-medium text-2xl" >{{musicData.title}}</span>
-            <span class="font-extralight text-opacity-70 text-lg" >{{musicData.artist}}</span>
-        </div>
-        <div class="flex items-center justify-between leading-5 mt-7 px-8 mx-auto " >
-        <div class="flex items-center gap-5" >
-     
-            <button (click)="isRepeat = !isRepeat" class=""  >
-                <mat-icon *ngIf="!isRepeat" class="text-xl scale-150" >repeat</mat-icon>
-                <mat-icon *ngIf="isRepeat"  class="text-xl scale-150" >repeat_on</mat-icon>
-            </button>
-            <button (click)="isShuffle = !isShuffle" >
-                <mat-icon *ngIf="!isShuffle"  class="text-xl scale-150" >shuffle</mat-icon>
-                <mat-icon *ngIf="isShuffle"  class="text-xl scale-150" >shuffle_on</mat-icon>
-            </button>
-     
-        </div>
-        <div class="flex items-center gap-5" >
-            
-            <button (click)="muteMusic()" >
-                <mat-icon *ngIf="!isMute"  class="text-xl scale-150" >volume_up</mat-icon>
-                <mat-icon *ngIf="isMute"  class="text-xl scale-150" >volume_mute</mat-icon>
-            </button>
-
-            <button>
-                <mat-icon   class="text-xl scale-150" >share</mat-icon>
-
-            </button>
-        </div>
-        </div>
+<div class="px-4 min-h-screen " style="width: 100vw;" >
+  <app-header class="mb-20" ></app-header>
+  <div class="  " *ngIf="musicData">
+    <div class=" overflow-x-visible flex items-center justify-center w-full   " style="height: 40vh;" >
+       
+      <image-container 
+      class="h-full w-full"
+        [imageSrc]="musicData.coverImage"
+      ></image-container>
     </div>
-    <app-music-controller class="w-full"
-    (sendMusicDetailEvent)="getMusicDetail($event)" 
-    ></app-music-controller>
+    <!-- <img class="rounded-xl overflow-hidden bg-teal-200 mx-auto w-11/12 mt-20" [src]="" alt="اهنگ"> -->
+    <div class="flex flex-col items-center leading-5 mt-20">
+      <span class="font-medium text-2xl">{{ musicData.title }}</span>
+      <span class="font-extralight text-opacity-70 text-lg">{{
+        musicData.artist
+      }}</span>
+    </div>
+    <div class="flex items-center justify-between leading-5 mt-7 mx-auto">
+      <div class="flex items-center gap-5">
+        <button (click)="isRepeat = !isRepeat" class="">
+          <mat-icon *ngIf="!isRepeat" class="text-xl scale-150"
+            >repeat</mat-icon
+          >
+          <mat-icon *ngIf="isRepeat" class="text-xl scale-150"
+            >repeat_on</mat-icon
+          >
+        </button>
+        <button (click)="isShuffle = !isShuffle">
+          <mat-icon *ngIf="!isShuffle" class="text-xl scale-150"
+            >shuffle</mat-icon
+          >
+          <mat-icon *ngIf="isShuffle" class="text-xl scale-150"
+            >shuffle_on</mat-icon
+          >
+        </button>
+      </div>
+      <div class="flex items-center gap-5">
+        <button (click)="muteMusic()">
+          <mat-icon *ngIf="!isMute" class="text-xl scale-150"
+            >volume_up</mat-icon
+          >
+          <mat-icon *ngIf="isMute" class="text-xl scale-150"
+            >volume_mute</mat-icon
+          >
+        </button>
+
+        <button>
+          <mat-icon class="text-xl scale-150">share</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-music-controller
+    class="w-full conteroller-card"
+    (sendMusicDetailEvent)="getMusicDetail($event)"
+  ></app-music-controller>
 </div>

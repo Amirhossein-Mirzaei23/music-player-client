@@ -1,10 +1,10 @@
-<div class="flex flex-col items-center " >
+<div [routerLink]="['/player', musicCardData.id]" class="flex flex-col items-center cursor-pointer" >
     <image-container [imageSrc]="musicCardData.coverImage" >
 
     </image-container>
-    <div class="flex flex-col items-center leading-5 " >
-        <span class="font-medium text-2xl" >{{musicCardData.title}}</span>
-        <span class="font-extralight text-opacity-70 text-lg" >{{musicCardData.artist}}</span>
+    <div    class="flex flex-col items-center leading-5 " >
+            <span class="font-medium text-xxl" >{{musicCardData.title}}</span>
+        <span class="font-extralight text-opacity-70 text-md" >{{musicCardData.artist}}</span>
     </div>
 
 </div>

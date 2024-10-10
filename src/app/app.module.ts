@@ -14,6 +14,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 // import { AngularIconComponent } from './app/angular-icon/angular-icon.component';
 // Import your app's components
@@ -44,6 +45,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatToolbarModule,            // Angular Material toolbar module
     MatCardModule,             // Angular Material card module
     AppComponent,
+    RouterModule
     
   ],
   providers: [],

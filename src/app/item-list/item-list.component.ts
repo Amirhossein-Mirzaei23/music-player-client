@@ -21,22 +21,22 @@ export class ItemListComponent {
   {
     id:2,
     title: "song test2",
-    artist: "theory of dead man test",
-    coverImage: "@/../img/song1.jpg",
+    artist: "theory of dead man",
+    coverImage: "@/../img/song2.jpg",
     musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:3,
   title: "song test3",
-  artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  artist: "theory of dead",
+  coverImage: "@/../img/song3.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:4,
   title: "song test4",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song4.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 
@@ -44,21 +44,21 @@ export class ItemListComponent {
   id:5,
   title: "song test5",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song5.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:6,
   title: "song test6",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song6.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:7,
   title: "song test7",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song7.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 
@@ -66,21 +66,21 @@ export class ItemListComponent {
   id:8,
   title: "song test8",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song8.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:9,
   title: "song test9",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song9.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
   id:10,
   title: "song test10",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song10.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
 {
@@ -94,7 +94,7 @@ export class ItemListComponent {
   id:12,
   title: "song test 12",
   artist: "theory of dead man test",
-  coverImage: "@/../img/song1.jpg",
+  coverImage: "@/../img/song2.jpg",
   musicSrc: "https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3"
 },
   ]

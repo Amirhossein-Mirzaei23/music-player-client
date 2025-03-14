@@ -1,1 +1,10 @@
-<p>item-list works!</p>
+<div class="w-screen p-5 mx-auto  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 " >
+    
+    <app-music-card *ngFor="let item of itemList" [musicCardData]="item" >
+
+    </app-music-card> 
+
+    <app-music-card *ngFor="let item of itemList" [musicCardData]="item" >
+
+    </app-music-card>
+</div>

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 // import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../../../services/rgbaColor.service';
 
 @Component({
   selector: 'app-progress-bar',
@@ -14,6 +15,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './progress-bar.component.scss'
 })
 export class ProgressBarComponent {
+  constructor(private dataService: DataService) {}
+
   @Input() currentTimeLenth!: number; // This is the prop received from the parent
   @Input() durationLenth!: number; // This is the prop received from the parent
   @Output() seekCurrenTimeEvent = new EventEmitter<number>();  // Event to handle Play
@@ -31,6 +34,8 @@ export class ProgressBarComponent {
 
 
      this.rgbColor = this.calculateRGB(this.progerssBarWidth);
+     
+     this.dataService.changeData(this.rgbColor);
   }
   ngOnChanges(currentTimeLenth:number) {
     this.calcProgerssBarWidth()

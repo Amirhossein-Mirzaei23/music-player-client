@@ -5,11 +5,8 @@
     gap: 10px;
  
     justify-content: space-evenly;
-    position:sticky;
-    top: calc( 100vh - 100px );
-    bottom:0px;
-    background-color: #091227;
-    
+
+    // background-color: #091227;
 
     &__conttroller-icon{
         transform: scale(2);
